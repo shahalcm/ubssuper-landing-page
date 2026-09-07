@@ -13,47 +13,55 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#16a34a",
+  themeColor: "#111827",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
 
 export const metadata: Metadata = {
-  title: "UBSSuper – Book Food, Hotels, Taxis & More in One App",
+  title: "UBS Super Taxi | Fast & Convenient Ride Booking",
   description:
-    "UBSSuper brings food, groceries, taxis, hotels, doctor bookings, jobs, real estate and more together in one convenient app.",
+    "Discover UBS Super Taxi, a convenient ride-booking app designed to make your everyday journeys easier. Download the app from Google Play.",
   keywords: [
-    "UBSSuper",
     "UBS Super Taxi",
+    "taxi booking app",
+    "ride booking",
+    "fast pickup",
+    "UBSSuper",
     "super app",
     "food delivery",
     "grocery delivery",
-    "taxi booking",
     "hotel booking",
     "doctor booking",
-    "real estate",
     "jobs",
+    "real estate",
   ],
   authors: [{ name: "UBS" }],
   creator: "UBS",
   publisher: "UBS",
-  metadataBase: new URL("https://ubssuper.com"),
+  metadataBase: new URL("https://ubssupertaxi.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "UBSSuper – Book Food, Hotels, Taxis & More in One App",
+    title: "UBS Super Taxi | Fast & Convenient Ride Booking",
     description:
-      "UBSSuper brings food, groceries, taxis, hotels, doctor bookings, jobs, real estate and more together in one convenient app.",
-    url: "https://ubssuper.com",
-    siteName: "UBSSuper",
+      "Discover UBS Super Taxi, a convenient ride-booking app designed to make your everyday journeys easier. Download the app from Google Play.",
+    url: "https://ubssupertaxi.com",
+    siteName: "UBS Super Taxi & UBSSuper",
     images: [
+      {
+        url: "/logos/ubs-super-taxi-logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "UBS Super Taxi Official Logo",
+      },
       {
         url: "/logos/ubssuper-logo.png",
         width: 1024,
         height: 1024,
-        alt: "UBSSuper App Logo",
+        alt: "UBSSuper Official Logo",
       },
     ],
     locale: "en_US",
@@ -61,10 +69,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UBSSuper – Book Food, Hotels, Taxis & More in One App",
+    title: "UBS Super Taxi | Fast & Convenient Ride Booking",
     description:
-      "UBSSuper brings food, groceries, taxis, hotels, doctor bookings, jobs, real estate and more together in one convenient app.",
-    images: ["/logos/ubssuper-logo.png"],
+      "Discover UBS Super Taxi, a convenient ride-booking app designed to make your everyday journeys easier. Download the app from Google Play.",
+    images: ["/logos/ubs-super-taxi-logo.png"],
   },
   robots: {
     index: true,
@@ -78,8 +86,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logos/ubssuper-logo.png",
-    apple: "/logos/ubssuper-logo.png",
+    icon: "/logos/ubs-super-taxi-logo.png",
+    apple: "/logos/ubs-super-taxi-logo.png",
   },
 };
 
@@ -93,7 +101,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#111827]">
+      <body className="min-h-screen flex flex-col bg-[#111827] text-white">
         {children}
       </body>
     </html>

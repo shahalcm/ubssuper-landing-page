@@ -35,7 +35,7 @@ export const Footer = () => {
   const servicesList = [
     { name: "Food", href: "#services" },
     { name: "Grocery", href: "#services" },
-    { name: "Taxi", href: "#taxi" },
+    { name: "Taxi", href: "#taxi-hero" },
     { name: "Hotels", href: "#services" },
     { name: "Doctor", href: "#services" },
     { name: "Jobs", href: "#services" },

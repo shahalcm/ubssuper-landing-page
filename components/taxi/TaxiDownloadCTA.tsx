@@ -36,7 +36,7 @@ export const TaxiDownloadCTA = () => {
                 Ready to Ride?
               </h3>
               <p className="text-sm sm:text-base text-gray-300 max-w-xl mt-1.5 leading-relaxed">
-                Download UBS Super Taxi and book your next ride with ease.
+                Get UBS Super Taxi and make your next ride easier to book.
               </p>
             </div>
           </div>

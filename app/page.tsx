@@ -1,64 +1,76 @@
 import React from "react";
 import { Navbar } from "@/components/navbar/Navbar";
-import { Hero } from "@/components/hero/Hero";
-import { StatsSection } from "@/components/stats/StatsSection";
-import { ServicesSection } from "@/components/services/ServicesSection";
-import { SuperFeatureSection } from "@/components/features/SuperFeatureSection";
-import { AppShowcase } from "@/components/showcase/AppShowcase";
-import { TaxiSection } from "@/components/taxi/TaxiSection";
-import { TaxiDownloadCTA } from "@/components/taxi/TaxiDownloadCTA";
-import { WhyChooseUs } from "@/components/features/WhyChooseUs";
+import { HeroTaxi } from "@/components/hero/HeroTaxi";
+import { TaxiFeaturesSection } from "@/components/taxi/TaxiFeaturesSection";
+import { TaxiBookingExperience } from "@/components/taxi/TaxiBookingExperience";
+import { RideOptionsSection } from "@/components/taxi/RideOptionsSection";
 import { HowItWorks } from "@/components/how-it-works/HowItWorks";
-import { MobileAppSection } from "@/components/mobile-section/MobileAppSection";
+import { TaxiScreensShowcase } from "@/components/taxi/TaxiScreensShowcase";
+import { WhySuperTaxi } from "@/components/taxi/WhySuperTaxi";
+import { TaxiDownloadCTA } from "@/components/taxi/TaxiDownloadCTA";
+import { UBSSuperIntro } from "@/components/superapp/UBSSuperIntro";
+import { ServicesSection } from "@/components/services/ServicesSection";
+import { EcosystemSection } from "@/components/ecosystem/EcosystemSection";
+import { AppComparison } from "@/components/comparison/AppComparison";
+import { SplitDownloadCTA } from "@/components/cta/SplitDownloadCTA";
 import { FAQSection } from "@/components/faq/FAQSection";
 import { FinalCTA } from "@/components/cta/FinalCTA";
 import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Top Sticky Navigation */}
+    <div id="home" className="flex flex-col min-h-screen bg-[#111827] text-white">
+      {/* 1. Premium Sticky Navbar */}
       <Navbar />
 
       <main className="flex-1">
-        {/* 1. Hero Section */}
-        <Hero />
+        {/* 2. Main Taxi Hero (Taxi First!) */}
+        <HeroTaxi />
 
-        {/* 2. Trust / Statistics Section */}
-        <StatsSection />
+        {/* 3. Taxi App Features */}
+        <TaxiFeaturesSection />
 
-        {/* 3. Services Section (8 Core Services) */}
-        <ServicesSection />
+        {/* 4. Taxi Booking Experience (Interactive 4 Steps) */}
+        <TaxiBookingExperience />
 
-        {/* 4. Dedicated UBSSuper Feature Section (Green Branding) */}
-        <SuperFeatureSection />
+        {/* 5. Ride Types (Bike, Auto, Mini, Sedan, SUV, Luxury) */}
+        <RideOptionsSection />
 
-        {/* 5. 3-Phone Interactive Mobile Showcase */}
-        <AppShowcase />
-
-        {/* 6. Dedicated UBS Super Taxi Section (Yellow Branding & Dark Theme) */}
-        <TaxiSection />
-
-        {/* 7. Dedicated Taxi Download CTA */}
-        <TaxiDownloadCTA />
-
-        {/* 8. Why Choose Us (6 Pillars) */}
-        <WhyChooseUs />
-
-        {/* 9. How It Works (3 Steps) */}
+        {/* 6. Universal / Taxi How It Works */}
         <HowItWorks />
 
-        {/* 10. Mobile App Section ("Your Services. Always With You.") */}
-        <MobileAppSection />
+        {/* 7. Taxi App Screens Showcase (5 Smartphone Mockups) */}
+        <TaxiScreensShowcase />
 
-        {/* 11. FAQ Accordion (7 Questions) */}
+        {/* 8. Why UBS Super Taxi (Dark Premium Cards) */}
+        <WhySuperTaxi />
+
+        {/* 9. Taxi Download CTA Banner ("Ready to Ride?") */}
+        <TaxiDownloadCTA />
+
+        {/* 10. UBSSuper Super App Introduction ("More Than Just a Ride") */}
+        <UBSSuperIntro />
+
+        {/* 11. UBSSuper Services (8 Services Grid with Taxi Highlighted) */}
+        <ServicesSection />
+
+        {/* 12. Combined UBS Ecosystem Section (Green UBSSuper + Yellow Taxi) */}
+        <EcosystemSection />
+
+        {/* 13. App Comparison (UBSSuper vs UBS Super Taxi) */}
+        <AppComparison />
+
+        {/* 14. Final Download Section (Split CTA: UBSSuper & UBS Super Taxi) */}
+        <SplitDownloadCTA />
+
+        {/* 15. FAQ Accordion (7 Questions) */}
         <FAQSection />
 
-        {/* 12. Final High-Impact Dual CTA */}
+        {/* 16. Final CTA ("Your Everyday Services. One UBS Ecosystem.") */}
         <FinalCTA />
       </main>
 
-      {/* Footer */}
+      {/* 17. Footer */}
       <Footer />
     </div>
   );
