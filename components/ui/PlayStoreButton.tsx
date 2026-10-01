@@ -2,7 +2,7 @@ import React from "react";
 
 interface PlayStoreButtonProps {
   href: string;
-  variant?: "ubssuper" | "taxi" | "dark" | "outline-green" | "outline-yellow";
+  variant?: "ubssuper" | "taxi" | "partner" | "delivery" | "dark" | "outline-green" | "outline-yellow" | "outline-blue" | "outline-orange";
   size?: "md" | "lg";
   className?: string;
   label?: string;
@@ -23,12 +23,20 @@ export const PlayStoreButton: React.FC<PlayStoreButtonProps> = ({
         return "bg-[#16A34A] hover:bg-[#15803D] text-white shadow-lg shadow-green-600/25 border border-green-500/20";
       case "taxi":
         return "bg-[#FACC15] hover:bg-[#EAB308] text-[#111827] shadow-lg shadow-yellow-500/20 font-semibold border border-yellow-400";
+      case "partner":
+        return "bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-lg shadow-blue-600/25 border border-blue-500/20";
+      case "delivery":
+        return "bg-[#EA580C] hover:bg-[#C2410C] text-white shadow-lg shadow-orange-600/25 border border-orange-500/20";
       case "dark":
         return "bg-[#111827] hover:bg-[#1F2937] text-white shadow-lg shadow-black/20 border border-gray-800";
       case "outline-green":
         return "bg-white hover:bg-green-50 text-[#16A34A] border-2 border-[#16A34A] shadow-sm";
       case "outline-yellow":
         return "bg-[#1F2937] hover:bg-[#374151] text-[#FACC15] border-2 border-[#FACC15] shadow-sm";
+      case "outline-blue":
+        return "bg-white hover:bg-blue-50 text-[#2563EB] border-2 border-[#2563EB] shadow-sm";
+      case "outline-orange":
+        return "bg-white hover:bg-orange-50 text-[#EA580C] border-2 border-[#EA580C] shadow-sm";
       default:
         return "bg-[#16A34A] hover:bg-[#15803D] text-white";
     }

@@ -47,7 +47,7 @@ export const TaxiSection = () => {
 
   return (
     <section
-      id="taxi"
+      id="super-taxi"
       className="py-24 sm:py-32 bg-[#111827] text-white relative overflow-hidden border-t-4 border-[#FACC15]"
     >
       {/* Yellow glowing ambient background */}

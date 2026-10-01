@@ -8,9 +8,9 @@ import {
   Stethoscope,
   Hotel,
   Car,
-  Building2,
-  Briefcase,
-  Wrench,
+  Truck,
+  Store,
+  Tv,
   ArrowRight,
   Sparkles,
 } from "lucide-react";
@@ -30,9 +30,9 @@ const iconMap: Record<string, React.ElementType> = {
   Stethoscope,
   Hotel,
   Car,
-  Building2,
-  Briefcase,
-  Wrench,
+  Truck,
+  Store,
+  Tv,
 };
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -96,7 +96,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="pt-6 mt-4 border-t border-gray-800/80 flex items-center justify-between">
         {isTaxi ? (
           <Link
-            href="#taxi-hero"
+            href="#super-taxi"
             className="text-xs font-black text-yellow-400 hover:text-yellow-300 flex items-center gap-1.5 group/btn"
           >
             <span>Explore Dedicated Taxi App</span>

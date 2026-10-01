@@ -2,90 +2,133 @@
 
 import React from "react";
 import Image from "next/image";
-import { Sparkles, Car, Layers, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Sparkles, ExternalLink } from "lucide-react";
 import { APP_LINKS } from "@/lib/constants";
 import { PlayStoreButton } from "@/components/ui/PlayStoreButton";
 
 export const SplitDownloadCTA = () => {
+  const cards = [
+    {
+      ...APP_LINKS.ubssuper,
+      subTitle: "All-in-One Super App",
+      desc: "Order food, groceries, rides, hotel stays, logistics, doctor appointments, marketplace products and appliances in one place.",
+      cardBorder: "border-green-500/40 hover:border-green-400",
+      bgGradient: "from-green-950/60 via-gray-900 to-gray-950",
+      accentText: "text-green-400",
+      btnVariant: "ubssuper" as const,
+      logoBg: "bg-white border-green-400",
+      glowBg: "bg-green-500/10",
+      tagline: "Book food, hotels, taxis & more in one app.",
+    },
+    {
+      ...APP_LINKS.taxi,
+      subTitle: "Dedicated Taxi App",
+      desc: "Fast, simple & reliable ride booking with multiple vehicle choices from Bike to Luxury, upfront fares, and live route navigation.",
+      cardBorder: "border-yellow-400/50 hover:border-yellow-300",
+      bgGradient: "from-yellow-950/60 via-gray-900 to-gray-950",
+      accentText: "text-yellow-400",
+      btnVariant: "taxi" as const,
+      logoBg: "bg-yellow-400 border-yellow-300",
+      glowBg: "bg-yellow-500/10",
+      tagline: "Your Ride. Your Way.",
+    },
+    {
+      ...APP_LINKS.partner,
+      subTitle: "Business & Merchant App",
+      desc: "Accept customer orders, manage product inventory and services, track appointments, and monitor store earnings seamlessly.",
+      cardBorder: "border-blue-500/40 hover:border-blue-400",
+      bgGradient: "from-blue-950/60 via-gray-900 to-gray-950",
+      accentText: "text-blue-400",
+      btnVariant: "partner" as const,
+      logoBg: "bg-white border-blue-400",
+      glowBg: "bg-blue-500/10",
+      tagline: "Manage. Grow. Connect.",
+    },
+    {
+      ...APP_LINKS.delivery,
+      subTitle: "Delivery Partner App",
+      desc: "Manage on-demand food, grocery, and marketplace delivery requests with live turn-by-turn navigation and transparent daily payouts.",
+      cardBorder: "border-orange-500/40 hover:border-orange-400",
+      bgGradient: "from-orange-950/60 via-gray-900 to-gray-950",
+      accentText: "text-orange-400",
+      btnVariant: "delivery" as const,
+      logoBg: "bg-white border-orange-400",
+      glowBg: "bg-orange-500/10",
+      tagline: "Powering Every Delivery.",
+    },
+  ];
+
   return (
-    <section className="py-20 sm:py-28 bg-[#0B0F19] text-white border-b border-gray-850 relative overflow-hidden">
+    <section id="download-apps" className="py-24 sm:py-32 bg-[#0B0F19] text-white border-b border-gray-850 relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div
+        className="absolute top-0 right-1/4 w-125 h-125 bg-green-500/5 rounded-full blur-[140px] pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 left-1/4 w-125 h-125 bg-yellow-500/5 rounded-full blur-[140px] pointer-events-none"
+        aria-hidden="true"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-3 py-1 rounded-full">
-            Download Now
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs font-bold uppercase tracking-wider text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-3.5 py-1 rounded-full">
+            Google Play Downloads
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">
-            Two Apps. One Powerful Ecosystem.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-3 mb-4">
+            Choose the UBS App You Need
           </h2>
+          <p className="text-base text-gray-300">
+            One connected platform for customers, businesses, taxi partners and delivery partners.
+          </p>
         </div>
 
-        {/* 2 Split Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* LEFT SPLIT: Green UBSSuper */}
-          <div className="relative rounded-[36px] bg-linear-to-br from-green-950/70 via-gray-900 to-gray-950 p-8 sm:p-12 border-2 border-green-500/40 shadow-2xl overflow-hidden flex flex-col justify-between">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-green-500/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Four Large Download Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+          {cards.map((c) => (
+            <div
+              key={c.id}
+              className={`relative rounded-[36px] bg-linear-to-b ${c.bgGradient} p-7 sm:p-8 border-2 ${c.cardBorder} shadow-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2`}
+            >
+              <div className={`absolute top-0 right-0 w-36 h-36 ${c.glowBg} rounded-full blur-2xl pointer-events-none`} />
 
-            <div>
-              <div className="w-20 h-20 relative rounded-3xl overflow-hidden bg-white p-2 shadow-lg shadow-green-500/20 border-2 border-green-400 mb-6 shrink-0">
-                <Image src={APP_LINKS.ubssuper.logo} alt="UBSSuper Logo" fill className="object-contain" />
+              <div>
+                {/* Official App Logo */}
+                <div className={`w-18 h-18 sm:w-20 sm:h-20 relative rounded-3xl overflow-hidden ${c.logoBg} p-1.5 shadow-lg border-2 mb-6 shrink-0`}>
+                  <Image src={c.logo} alt={`${c.name} Logo`} fill className="object-contain" />
+                </div>
+
+                <span className={`text-xs font-black uppercase tracking-wider block mb-1 ${c.accentText}`}>
+                  {c.subTitle}
+                </span>
+
+                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight mb-2">
+                  {c.name}
+                </h3>
+
+                <p className="text-xs italic text-gray-400 mb-4">
+                  &ldquo;{c.tagline}&rdquo;
+                </p>
+
+                <p className="text-xs text-gray-300 mb-6 font-normal leading-relaxed min-h-[54px]">
+                  {c.desc}
+                </p>
               </div>
 
-              <span className="text-xs font-bold uppercase tracking-wider text-green-400 block mb-1">
-                All-in-One Super App
-              </span>
-              <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight mb-3">
-                Everything You Need.
-                <br />
-                <span className="text-green-400">One Super App.</span>
-              </h3>
-
-              <p className="text-sm text-gray-300 mb-8 max-w-md font-normal leading-relaxed">
-                Access food, groceries, rides, hotel reservations, doctor bookings, real estate, and job opportunities from a single unified app.
-              </p>
-            </div>
-
-            <PlayStoreButton
-              href={APP_LINKS.ubssuper.playStoreUrl}
-              variant="ubssuper"
-              size="lg"
-              label="DOWNLOAD"
-              appTitle="UBSSuper"
-              className="w-full sm:w-auto text-base"
-            />
-          </div>
-
-          {/* RIGHT SPLIT: Yellow UBS Super Taxi */}
-          <div className="relative rounded-[36px] bg-linear-to-br from-yellow-950/70 via-gray-900 to-gray-950 p-8 sm:p-12 border-2 border-yellow-400/50 shadow-2xl shadow-yellow-500/10 overflow-hidden flex flex-col justify-between">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none" />
-
-            <div>
-              <div className="w-20 h-20 relative rounded-3xl overflow-hidden bg-yellow-400 p-2 shadow-lg shadow-yellow-500/20 border-2 border-yellow-300 mb-6 shrink-0">
-                <Image src={APP_LINKS.taxi.logo} alt="UBS Super Taxi Logo" fill className="object-contain" />
+              {/* Verified Play Store Button */}
+              <div className="pt-4 border-t border-gray-800">
+                <PlayStoreButton
+                  href={c.playStoreUrl}
+                  variant={c.btnVariant}
+                  size="lg"
+                  label="DOWNLOAD"
+                  appTitle={c.name}
+                  className="w-full text-sm font-bold"
+                />
               </div>
-
-              <span className="text-xs font-bold uppercase tracking-wider text-yellow-400 block mb-1">
-                Dedicated Taxi & Ride App
-              </span>
-              <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight mb-3">
-                Your Ride.
-                <br />
-                <span className="text-yellow-400">Your Way.</span>
-              </h3>
-
-              <p className="text-sm text-gray-300 mb-8 max-w-md font-normal leading-relaxed">
-                Experience prompt pickups, clear upfront fares, vehicle tiers from Bike to Luxury, and real-time live navigation tracking.
-              </p>
             </div>
-
-            <PlayStoreButton
-              href={APP_LINKS.taxi.playStoreUrl}
-              variant="taxi"
-              size="lg"
-              label="DOWNLOAD"
-              appTitle="UBS Super Taxi"
-              className="w-full sm:w-auto text-base"
-            />
-          </div>
+          ))}
         </div>
       </div>
     </section>

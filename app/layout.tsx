@@ -20,37 +20,50 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "UBS Super Taxi | Fast & Convenient Ride Booking",
+  title: "UBS | One Ecosystem. Four Powerful Apps.",
   description:
-    "Discover UBS Super Taxi, a convenient ride-booking app designed to make your everyday journeys easier. Download the app from Google Play.",
+    "Explore the UBS ecosystem — UBSSuper, UBS Super Taxi, UBS Partner and UBS Delivery. Connect customers, businesses, taxi operators and delivery partners on one platform.",
   keywords: [
+    "UBS",
+    "UBS Ecosystem",
+    "UBSSuper",
     "UBS Super Taxi",
+    "UBS Partner",
+    "UBS Delivery",
+    "super app",
     "taxi booking app",
     "ride booking",
-    "fast pickup",
-    "UBSSuper",
-    "super app",
+    "merchant app",
+    "delivery partner app",
+    "courier app",
     "food delivery",
     "grocery delivery",
     "hotel booking",
+    "logistics",
     "doctor booking",
-    "jobs",
-    "real estate",
+    "marketplace",
+    "appliances",
   ],
   authors: [{ name: "UBS" }],
   creator: "UBS",
   publisher: "UBS",
-  metadataBase: new URL("https://ubssupertaxi.com"),
+  metadataBase: new URL("https://ubssuper.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "UBS Super Taxi | Fast & Convenient Ride Booking",
+    title: "UBS | One Ecosystem. Four Powerful Apps.",
     description:
-      "Discover UBS Super Taxi, a convenient ride-booking app designed to make your everyday journeys easier. Download the app from Google Play.",
-    url: "https://ubssupertaxi.com",
-    siteName: "UBS Super Taxi & UBSSuper",
+      "Explore the UBS ecosystem — UBSSuper, UBS Super Taxi, UBS Partner and UBS Delivery.",
+    url: "https://ubssuper.com",
+    siteName: "UBS Ecosystem",
     images: [
+      {
+        url: "/logos/ubssuper-logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "UBSSuper Official Logo",
+      },
       {
         url: "/logos/ubs-super-taxi-logo.png",
         width: 1024,
@@ -58,10 +71,16 @@ export const metadata: Metadata = {
         alt: "UBS Super Taxi Official Logo",
       },
       {
-        url: "/logos/ubssuper-logo.png",
-        width: 1024,
-        height: 1024,
-        alt: "UBSSuper Official Logo",
+        url: "/logos/ubs-partner-logo.png",
+        width: 512,
+        height: 512,
+        alt: "UBS Partner Official Logo",
+      },
+      {
+        url: "/logos/ubs-delivery-logo.png",
+        width: 512,
+        height: 512,
+        alt: "UBS Delivery Official Logo",
       },
     ],
     locale: "en_US",
@@ -69,10 +88,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UBS Super Taxi | Fast & Convenient Ride Booking",
+    title: "UBS | One Ecosystem. Four Powerful Apps.",
     description:
-      "Discover UBS Super Taxi, a convenient ride-booking app designed to make your everyday journeys easier. Download the app from Google Play.",
-    images: ["/logos/ubs-super-taxi-logo.png"],
+      "Explore the UBS ecosystem — UBSSuper, UBS Super Taxi, UBS Partner and UBS Delivery.",
+    images: ["/logos/ubssuper-logo.png"],
   },
   robots: {
     index: true,
@@ -86,8 +105,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logos/ubs-super-taxi-logo.png",
-    apple: "/logos/ubs-super-taxi-logo.png",
+    icon: "/logos/ubssuper-logo.png",
+    apple: "/logos/ubssuper-logo.png",
   },
 };
 

@@ -2,146 +2,131 @@
 
 import React from "react";
 import Image from "next/image";
-import { Check, Sparkles, Car, Layers } from "lucide-react";
+import { Check, Sparkles, Car, Store, Bike, Layers } from "lucide-react";
 import { APP_LINKS } from "@/lib/constants";
 import { PlayStoreButton } from "@/components/ui/PlayStoreButton";
 
 export const AppComparison = () => {
-  const comparisonRows = [
+  const apps = [
     {
-      feature: "Primary Focus",
-      ubssuper: "All-in-One Everyday Services",
-      taxi: "Dedicated Taxi & Ride Booking",
+      ...APP_LINKS.ubssuper,
+      tag: "Consumer Demand",
+      role: "All-in-One Super App",
+      focus: "Everyday consumer services (food, groceries, stays, health & shopping)",
+      userBase: "Consumers & individuals",
+      keyFeature: "8 integrated service categories in 1 place",
+      variant: "ubssuper" as const,
+      border: "border-green-500/40 hover:border-green-400",
+      accent: "text-green-400",
+      pill: "bg-green-500/20 text-green-400 border-green-500/30",
     },
     {
-      feature: "Target Audience",
-      ubssuper: "Users seeking food, grocery, hotel, doctor & ride services",
-      taxi: "Users primarily looking for fast city rides & transport",
+      ...APP_LINKS.taxi,
+      tag: "Transportation",
+      role: "Dedicated Taxi App",
+      focus: "Direct ride requests, live tracking, vehicle classes & driver matching",
+      userBase: "Commuters & passengers",
+      keyFeature: "Instant map launch & 6 vehicle tiers",
+      variant: "taxi" as const,
+      border: "border-yellow-400/50 hover:border-yellow-300",
+      accent: "text-yellow-400",
+      pill: "bg-yellow-400/20 text-yellow-400 border-yellow-400/30",
     },
     {
-      feature: "Ride Booking",
-      ubssuper: "Integrated within services tab",
-      taxi: "Instant launch to ride screen & map",
+      ...APP_LINKS.partner,
+      tag: "Merchant Supply",
+      role: "Business Management App",
+      focus: "Incoming orders, stock sync, service catalog & earnings oversight",
+      userBase: "Shops, restaurants, hotels, clinics & sellers",
+      keyFeature: "Store management & live orders dashboard",
+      variant: "partner" as const,
+      border: "border-blue-500/40 hover:border-blue-400",
+      accent: "text-blue-400",
+      pill: "bg-blue-500/20 text-blue-400 border-blue-500/30",
     },
     {
-      feature: "Vehicle Selection",
-      ubssuper: "Standard booking",
-      taxi: "Complete vehicle class customization",
-    },
-    {
-      feature: "Additional Services",
-      ubssuper: "Food, Groceries, Stays, Healthcare, Real Estate, Jobs",
-      taxi: "Focused transportation suite",
-    },
-    {
-      feature: "Google Play Release",
-      ubssuper: "Official Android app",
-      taxi: "Official Android app",
+      ...APP_LINKS.delivery,
+      tag: "Fulfillment Fleet",
+      role: "Delivery Partner App",
+      focus: "Delivery requests, turn-by-turn navigation & daily trip payout tracking",
+      userBase: "Delivery drivers & couriers",
+      keyFeature: "GPS navigation & pickup/drop verification",
+      variant: "delivery" as const,
+      border: "border-orange-500/40 hover:border-orange-400",
+      accent: "text-orange-400",
+      pill: "bg-orange-500/20 text-orange-400 border-orange-500/30",
     },
   ];
 
   return (
     <section className="py-20 sm:py-28 bg-[#0B0F19] text-white border-b border-gray-850">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gray-900 border border-gray-800 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Product Guide</span>
+            <span>Platform Guide</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-            Choose the Experience You Need
+            Find the Right App for You
           </h2>
 
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
-            Understand which app best matches your lifestyle and immediate needs.
+            Whether you want to order everyday essentials, book an instant ride, manage your business, or earn delivering orders — UBS has a tailored application.
           </p>
         </div>
 
-        {/* Comparison Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Card 1: UBSSuper */}
-          <div className="bg-gray-900/90 rounded-4xl p-8 border border-green-500/30 flex flex-col justify-between shadow-xl">
-            <div>
-              <div className="flex items-center gap-3.5 pb-6 border-b border-gray-800">
-                <div className="w-14 h-14 relative rounded-2xl overflow-hidden bg-white p-1 shrink-0 border border-green-400">
-                  <Image src={APP_LINKS.ubssuper.logo} alt="UBSSuper Logo" fill className="object-contain" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-black text-white">UBSSuper</h3>
-                  <span className="text-xs font-bold text-green-400 uppercase tracking-wider">
-                    All-in-One Super App
+        {/* 4 App Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {apps.map((app) => (
+            <div
+              key={app.id}
+              className={`bg-gray-900/90 rounded-4xl p-6 sm:p-7 border ${app.border} flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-1.5`}
+            >
+              <div>
+                <div className="flex items-center justify-between pb-5 border-b border-gray-800 mb-5">
+                  <div className="w-12 h-12 relative rounded-2xl overflow-hidden p-1 shrink-0 bg-white border border-gray-700">
+                    <Image src={app.logo} alt={app.name} fill className="object-contain" />
+                  </div>
+                  <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-full border ${app.pill}`}>
+                    {app.tag}
                   </span>
                 </div>
-              </div>
 
-              <div className="py-6">
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  For users who want access to multiple everyday services — food, groceries, rides, hotel stays, healthcare, real estate, and jobs in one place.
-                </p>
-              </div>
+                <h3 className="text-xl font-black text-white mb-1">{app.name}</h3>
+                <span className={`text-xs font-bold uppercase tracking-wider block mb-4 ${app.accent}`}>
+                  {app.role}
+                </span>
 
-              <div className="space-y-3 pb-8">
-                {comparisonRows.map((row) => (
-                  <div key={row.feature} className="text-xs border-b border-gray-850 pb-2.5">
-                    <span className="text-gray-500 block">{row.feature}</span>
-                    <span className="text-gray-200 font-medium">{row.ubssuper}</span>
+                <div className="space-y-3 pb-6 text-xs">
+                  <div>
+                    <span className="text-gray-500 uppercase font-bold text-[9px] block">Primary Focus</span>
+                    <span className="text-gray-200 font-medium">{app.focus}</span>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <PlayStoreButton
-              href={APP_LINKS.ubssuper.playStoreUrl}
-              variant="ubssuper"
-              size="lg"
-              label="DOWNLOAD"
-              appTitle="UBSSuper App"
-              className="w-full text-sm"
-            />
-          </div>
-
-          {/* Card 2: UBS Super Taxi */}
-          <div className="bg-gray-900/90 rounded-4xl p-8 border-2 border-yellow-400/60 flex flex-col justify-between shadow-xl shadow-yellow-500/5 ring-1 ring-yellow-400/30">
-            <div>
-              <div className="flex items-center gap-3.5 pb-6 border-b border-gray-800">
-                <div className="w-14 h-14 relative rounded-2xl overflow-hidden bg-yellow-400 p-1 shrink-0 border border-yellow-300">
-                  <Image src={APP_LINKS.taxi.logo} alt="UBS Super Taxi Logo" fill className="object-contain" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-black text-white">UBS Super Taxi</h3>
-                  <span className="text-xs font-bold text-yellow-400 uppercase tracking-wider">
-                    Dedicated Taxi App
-                  </span>
+                  <div>
+                    <span className="text-gray-500 uppercase font-bold text-[9px] block">Target User</span>
+                    <span className="text-gray-200 font-medium">{app.userBase}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 uppercase font-bold text-[9px] block">Core Capability</span>
+                    <span className="text-gray-200 font-medium">{app.keyFeature}</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="py-6">
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  For users primarily looking for taxi and ride booking with direct launch to the map, fast driver matching, and custom vehicle tiers.
-                </p>
-              </div>
-
-              <div className="space-y-3 pb-8">
-                {comparisonRows.map((row) => (
-                  <div key={row.feature} className="text-xs border-b border-gray-850 pb-2.5">
-                    <span className="text-gray-500 block">{row.feature}</span>
-                    <span className="text-yellow-200 font-medium">{row.taxi}</span>
-                  </div>
-                ))}
+              <div className="pt-4 border-t border-gray-800">
+                <PlayStoreButton
+                  href={app.playStoreUrl}
+                  variant={app.variant}
+                  size="md"
+                  label="DOWNLOAD"
+                  appTitle={app.name}
+                  className="w-full text-xs font-bold"
+                />
               </div>
             </div>
-
-            <PlayStoreButton
-              href={APP_LINKS.taxi.playStoreUrl}
-              variant="taxi"
-              size="lg"
-              label="DOWNLOAD"
-              appTitle="UBS Super Taxi"
-              className="w-full text-sm"
-            />
-          </div>
+          ))}
         </div>
       </div>
     </section>

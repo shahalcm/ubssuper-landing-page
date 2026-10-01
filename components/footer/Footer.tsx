@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Shield } from "lucide-react";
+import { ExternalLink, Shield, Sparkles } from "lucide-react";
 import { APP_LINKS } from "@/lib/constants";
 
 // Clean SVG icons for social networks
@@ -32,32 +32,40 @@ const YouTubeIcon = () => (
 );
 
 export const Footer = () => {
+  const productsList = [
+    { name: "UBSSuper", href: APP_LINKS.ubssuper.playStoreUrl, external: true, color: "hover:text-green-400" },
+    { name: "UBS Super Taxi", href: APP_LINKS.taxi.playStoreUrl, external: true, color: "hover:text-yellow-400" },
+    { name: "UBS Partner", href: APP_LINKS.partner.playStoreUrl, external: true, color: "hover:text-blue-400" },
+    { name: "UBS Delivery", href: APP_LINKS.delivery.playStoreUrl, external: true, color: "hover:text-orange-400" },
+  ];
+
   const servicesList = [
-    { name: "Food", href: "#services" },
+    { name: "Taxi", href: "#super-taxi" },
     { name: "Grocery", href: "#services" },
-    { name: "Taxi", href: "#taxi-hero" },
+    { name: "Food", href: "#services" },
     { name: "Hotels", href: "#services" },
-    { name: "Doctor", href: "#services" },
-    { name: "Jobs", href: "#services" },
-    { name: "Real Estate", href: "#services" },
-    { name: "Services", href: "#services" },
+    { name: "Logistics", href: "#services" },
+    { name: "Doctors", href: "#services" },
+    { name: "Marketplace", href: "#services" },
+    { name: "Appliances", href: "#services" },
   ];
 
   const companyList = [
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#about" },
-    { name: "Privacy Policy", href: "#" },
+    { name: "About", href: "#home" },
+    { name: "Contact", href: "mailto:superubs8@gmail.com" },
+    { name: "Privacy Policy", href: "https://www.ubssuper.com/privacy-policy", external: true },
     { name: "Terms & Conditions", href: "#" },
+    { name: "Support", href: "mailto:superubs8@gmail.com" },
   ];
 
   return (
-    <footer className="bg-gray-950 text-gray-400 pt-16 pb-12 border-t border-gray-900">
+    <footer id="contact" className="bg-gray-950 text-gray-400 pt-16 pb-12 border-t border-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-gray-900">
           {/* Column 1: Brand & Tagline (5 Cols) */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 relative rounded-2xl overflow-hidden bg-white p-1 shadow-sm">
+              <div className="w-10 h-10 relative rounded-2xl overflow-hidden bg-white p-1 shadow-sm border border-green-500/20">
                 <Image
                   src={APP_LINKS.ubssuper.logo}
                   alt="UBSSuper Official Logo"
@@ -70,17 +78,17 @@ export const Footer = () => {
               </span>
             </div>
 
-            <p className="text-sm text-gray-400 max-w-sm leading-relaxed">
-              &ldquo;Book food, hotels, taxis & more in one app.&rdquo;
+            <p className="text-sm text-gray-300 max-w-sm leading-relaxed font-medium">
+              &ldquo;One Ecosystem. Four Connected Apps.&rdquo;
             </p>
 
-            <p className="text-xs text-gray-500 max-w-sm leading-relaxed">
-              UBSSuper brings everyday services together in one powerful, easy-to-use mobile platform.
+            <p className="text-xs text-gray-400 max-w-sm leading-relaxed font-normal">
+              UBS connects customers, businesses, taxi operators, and delivery partners through an integrated digital ecosystem.
             </p>
 
             {/* Social Icons */}
             <div className="pt-2">
-              <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-3">
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block mb-3">
                 Connect With Us
               </span>
               <div className="flex items-center gap-3">
@@ -96,7 +104,7 @@ export const Footer = () => {
                       key={social.name}
                       href="#"
                       aria-label={`${social.name} (Social link)`}
-                      className="w-9 h-9 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:bg-gray-800 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-green-500"
+                      className="w-9 h-9 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:bg-gray-850 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-green-500"
                     >
                       <Icon />
                     </a>
@@ -106,38 +114,29 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Products (2 Cols) */}
+          {/* Column 2: Products (4 Connected Apps) (2 Cols) */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Products
             </h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href={APP_LINKS.ubssuper.playStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white flex items-center gap-1.5 transition-colors group"
-                >
-                  <span className="group-hover:text-green-400">UBSSuper</span>
-                  <ExternalLink className="w-3 h-3 text-gray-600 group-hover:text-green-400" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={APP_LINKS.taxi.playStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white flex items-center gap-1.5 transition-colors group"
-                >
-                  <span className="group-hover:text-yellow-400">UBS Super Taxi</span>
-                  <ExternalLink className="w-3 h-3 text-gray-600 group-hover:text-yellow-400" />
-                </a>
-              </li>
+              {productsList.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-1.5 transition-colors group ${item.color}`}
+                  >
+                    <span>{item.name}</span>
+                    <ExternalLink className="w-3 h-3 text-gray-600 group-hover:text-current" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Services (3 Cols) */}
+          {/* Column 3: Services (8 Categories) (3 Cols) */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Services
@@ -163,12 +162,24 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm">
               {companyList.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="hover:text-white transition-colors"
-                  >
-                    {item.name}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors flex items-center gap-1"
+                    >
+                      <span>{item.name}</span>
+                      <ExternalLink className="w-3 h-3 text-gray-600" />
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="hover:text-white transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -176,11 +187,16 @@ export const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
           <p>© 2026 UBS. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span>UBSSuper & UBS Super Taxi</span>
-            <span>Android Apps on Google Play</span>
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
+            <span>UBSSuper</span>
+            <span>•</span>
+            <span>UBS Super Taxi</span>
+            <span>•</span>
+            <span>UBS Partner</span>
+            <span>•</span>
+            <span>UBS Delivery</span>
           </div>
         </div>
       </div>

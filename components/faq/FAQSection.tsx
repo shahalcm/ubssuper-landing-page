@@ -26,7 +26,7 @@ export const FAQSection = () => {
           </h2>
 
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
-            Everything you need to know about UBS Super Taxi and UBSSuper.
+            Everything you need to know about the four connected UBS applications.
           </p>
         </div>
 
